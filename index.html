@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Weather</h2>
+            <div class="input">
+                <input type="text" name="city" id="city_Input" placeholder="Enter city name">
+                <button type="button" id="searchBtn">
+                    <i class="fa-regular fa-search"></i> Search
+
+                </button>
+                <button type="button" id="locationBtn">
+                    <i class="bx bx-target-lock"></i> Current location
+
+                </button>
+            </div>
+        </div>
+        <div class="weather-data">
+            <div class="left-section">
+                <div class="card">
+                    <div class="current-weather">
+                        <div class="details">
+                            <p>Now</p>
+                            <h2>___&deg;C</h2>
+                            <p>_____</p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-footer">
+                        <p><i class="fa-light fa-calendar"></i>______</p>
+                        <p><i class="fa-light fa-location-dot"></i>______</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>5-Day forecast</h2>
+                    <div class="day-forecast">
+                        <div class="forecast-items">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>____</p>
+                            <p>____</p>
+                        </div>
+                        <div class="forecast-items">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>____</p>
+                            <p>____</p>
+                        </div>
+                        <div class="forecast-items">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>____</p>
+                            <p>____</p>
+                        </div>
+                        <div class="forecast-items">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>____</p>
+                            <p>____</p>
+                        </div>
+                        <div class="forecast-items">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>____</p>
+                            <p>____</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

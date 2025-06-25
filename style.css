@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-color1: #212529;
+    --bg-color2: #2a2b2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color1);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    & #city_Input {
+        background-color: var(--bg-color2);
+        border: none;
+        padding: 13px;
+        font-size: 15px;
+        border-radius: 30px;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    & #searchBtn {
+        border: none;
+        padding: 13px;
+        border-radius: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    & #locationBtn {
+        border: none;
+        padding: 13px;
+        border-radius: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: rgb(164, 83, 184);
+        color: white;
+    }
+
+}
+
+.card{
+    background-color: var(--bg-color2);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom:16px ;
+
+    & p{
+        font-size: 15px;
+        color: white;
+    }
+    & h2{
+        font-size: 30px;
+        font-weight: 500;
+    }
+}
+
+.weather-data{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+
+    & .left-section{
+        grid-column: span 1;
+        & .current-weather{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & h2{
+                margin: 8px 0;
+            }
+            & p{
+                color: white;
+            }
+        }
+        & .card-footer p{
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+        & .forecast-items{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            place-items: center;
+            margin-bottom: 16px;
+            & .icon-wrapper{
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
