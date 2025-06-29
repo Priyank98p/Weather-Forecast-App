@@ -72,8 +72,7 @@ Type in your favorite city and get current weather details including:
 
 ## 🧪 Demo
 
-Live demo: [🌐 Weather Forecast App](https://weather-forecast-app-rose-five.vercel.app/)  
-_(Replace with your deployed link)_
+Live demo: [🌐 Weather Forecast App](https://weather-forecast-app-rose-five.vercel.app/)
 
 ---
 
