@@ -33,20 +33,26 @@ hr {
     top: 0;
     background-color: var(--bg-color1);
     display: flex;
+    z-index: 999;
+    /* Add this */
+    background: rgba(255, 255, 255, 0.1);
+    /* translucent white */
+    /* Make it translucent */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    padding: 15px 0;
+    padding: 15px 15px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .navbar h2 {
     margin-bottom: 8px;
-}
-
-#city_Input,
-#searchBtn,
-#locationBtn {
-    margin-bottom: 10px;
 }
 
 #city_Input {
@@ -170,11 +176,25 @@ hr {
     border-radius: 18px;
 }
 
-.air-index.aqi-1 { background-color: var(--aqi-1); }
-.air-index.aqi-2 { background-color: var(--aqi-2); }
-.air-index.aqi-3 { background-color: var(--aqi-3); }
-.air-index.aqi-4 { background-color: var(--aqi-4); }
-.air-index.aqi-5 { background-color: var(--aqi-5); }
+.air-index.aqi-1 {
+    background-color: var(--aqi-1);
+}
+
+.air-index.aqi-2 {
+    background-color: var(--aqi-2);
+}
+
+.air-index.aqi-3 {
+    background-color: var(--aqi-3);
+}
+
+.air-index.aqi-4 {
+    background-color: var(--aqi-4);
+}
+
+.air-index.aqi-5 {
+    background-color: var(--aqi-5);
+}
 
 .air-indices {
     display: grid;
@@ -213,19 +233,36 @@ hr {
     text-align: center;
 }
 
+.weather-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+}
+
 @media(max-width:1100px) {
     .weather-data {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .right-section {
         grid-column: span 2;
     }
+
     .right-section .highlights {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .right-section .highlights .card:nth-of-type(1) {
         grid-column: span 3;
     }
+
     .right-section .hourly-forecast {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -235,15 +272,19 @@ hr {
     .weather-data {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .right-section {
         grid-column: span 1;
     }
+
     .right-section .highlights {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .right-section .highlights .card:nth-of-type(1) {
         grid-column: span 2;
     }
+
     .right-section .hourly-forecast {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -253,6 +294,7 @@ hr {
     .right-section .highlights .card {
         grid-column: span 2;
     }
+
     .right-section .highlights .air-indices {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -262,6 +304,7 @@ hr {
     .weather-data {
         grid-template-columns: 1fr;
     }
+
     .right-section .highlights .card:nth-of-type(3),
     .right-section .highlights .card:nth-of-type(4),
     .right-section .highlights .card:nth-of-type(5),
@@ -269,6 +312,7 @@ hr {
     .right-section .highlights .card:nth-of-type(7) {
         grid-column: span 1;
     }
+
     .right-section .highlights .air-indices {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -278,9 +322,11 @@ hr {
     .navbar {
         flex-direction: column;
     }
+
     .navbar h2 {
         margin-bottom: 8px;
     }
+
     #city_Input,
     #searchBtn,
     #locationBtn {
@@ -296,6 +342,7 @@ hr {
 }
 
 @media (max-width:480px) {
+
     .right-section .highlights .card:nth-of-type(3),
     .right-section .highlights .card:nth-of-type(4),
     .right-section .highlights .card:nth-of-type(5),
@@ -303,6 +350,7 @@ hr {
     .right-section .highlights .card:nth-of-type(7) {
         grid-column: span 2;
     }
+
     .right-section .highlights .air-indices {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -324,4 +372,39 @@ hr {
     .right-section .highlights .air-indices {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* =============================== */
+/* 🔮 GLASSMORPHISM & BACKGROUND  */
+/* =============================== */
+
+/* Frosted background image (behind everything) */
+.app-background {
+    background: url('images/snow.jpg') no-repeat center center/cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(6px) brightness(0.6);
+}
+
+
+/* Glass card effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Optional: hover or interaction styles */
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.12);
 }

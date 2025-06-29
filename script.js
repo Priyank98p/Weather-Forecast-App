@@ -71,7 +71,17 @@ function getWeatherDetails(name, lat, lon, country, state) {
     fetch(weather_api_url)
         .then(res => res.json())
         .then(data => {
+            
             let date = new Date();
+            let isNight = data.weather[0].icon.includes("n");
+            let condition = data.weather[0].main.toLowerCase();
+            if (isNight && condition === "clouds") {
+                setWeatherBackground("clouds_night");
+            } else if (isNight) {
+                setWeatherBackground("night");
+            } else {
+                setWeatherBackground(condition);
+            }
             currentWeatherCard.innerHTML = `
             <div class="current-weather">
                         <div class="details">
@@ -150,7 +160,7 @@ function getWeatherDetails(name, lat, lon, country, state) {
                     a = 'PM';
                 }
                 hourlyForecastCard.innerHTML += `
-                <div class="card">
+                <div class="card glass-card">
                         <p>${hr} ${a}</p>
                         <img src="https://openweathermap.org/img/wn/${hourlyForecast[i].weather[0].icon}.png" alt="">
                         <p>${hourlyForecast[i].main.temp.toFixed(2)}&deg;C</p>
@@ -228,4 +238,44 @@ locationBtn.addEventListener('click', () => {
 cityInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') searchBtn.click();
 });
+
+
+const background = document.getElementById("weatherBackground");
+
+function setWeatherBackground(weatherCondition) {
+    let imageUrl = "";
+
+    switch (weatherCondition.toLowerCase()) {
+        case "clear":
+            imageUrl = "images/clear.png";
+            break;
+        case "clouds":
+            imageUrl = "images/cloudy.png";
+            break;
+        case "mist":
+        case "fog":
+            imageUrl = "images/mist.png";
+            break;
+        case "thunderstorm":
+            imageUrl = "images/thunderstorm.png";
+            break;
+        case "night":
+            imageUrl = "images/night.png"
+            break;
+        case "clouds_night":
+            imageUrl = "images/cloud at night.png";
+            break;
+        case "snow":
+            imageUrl = "images/snow.png";
+            break;
+        case "rain":
+            imageUrl = "images/rain.png";
+            break;
+        default:
+            imageUrl = "images/clear.png";
+    }
+
+    background.style.backgroundImage = `url('${imageUrl}')`;
+}
+
 window.addEventListener('load', () => locationBtn.click());
