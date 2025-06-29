@@ -96,7 +96,6 @@ _(Replace with your deployed link)_
 ├── index.html
 ├── style.css
 ├── script.js
-├── screenshot.png
 ├── /images
 │   ├── clear.png
 │   ├── thunderstorm.png
@@ -104,8 +103,12 @@ _(Replace with your deployed link)_
 │   ├── cloudy.png
 │   ├── night.png
 │   ├── snow.png
+│   ├── home.png
+│   ├── weather-result.png
+│   ├── mobile-view.jpg
 │   ├── rain.png
 │   └── cloud at night.png
+
 ```
 
 ---
