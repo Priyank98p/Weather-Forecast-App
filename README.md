@@ -16,7 +16,7 @@ Built using **HTML, CSS, and JavaScript**, with a responsive and visually engagi
 ![Weather Result](./images/weather-result.png)
 
 ### 📱 Mobile View
-![Mobile View](./images/mobile-view.png)
+![Mobile View](./images/mobile-view.jpg)
 
 ---
 
