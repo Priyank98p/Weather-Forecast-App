@@ -10,13 +10,14 @@ Built using **HTML, CSS, and JavaScript**, with a responsive and visually engagi
 ## 📸 Preview
 
 ### 🔍 Home Page
-![Home Page](./images/homepage.png)
+![Home Page](./images/home.png)
 
 ### 🌤️ Weather Result
 ![Weather Result](./images/weather-result.png)
 
 ### 📱 Mobile View
 ![Mobile View](./images/mobile-view.png)
+
 ---
 
 ## 🎯 Features at a Glance
@@ -71,7 +72,7 @@ Type in your favorite city and get current weather details including:
 
 ## 🧪 Demo
 
-Live demo: [🌐 Weather Forecast App]([https://weather-forecast-app-rose-five.vercel.app/])  
+Live demo: [🌐 Weather Forecast App](https://weather-forecast-app-rose-five.vercel.app/)  
 _(Replace with your deployed link)_
 
 ---
